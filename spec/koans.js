@@ -8,31 +8,35 @@ describe('`let` restricts the scope of the variable to the current block - ', ()
   describe('`let` vs. `var`.', () => {
     it('`var` works as usual, it does not restricts scope', () => {
       if (true) {
-        /*You should add your code in here*/
+   var varX = true; 
       }
-      // expect(varX).toBe(true);
+      expect(varX).toBe(true);
     });
 
     it('`let` restricts scope to inside the block', () => {
+let letX = false
       /*var or const? letX = false*/
       if (true) {
+let letX = true
         /*var or const? letX = true*/
       }
-      //expect(letX).toBe(false);
+      expect(letX).toBe(false);
     });
 
     it('`var` does not restricts scope to inside the block in `for` loops', () => {
       /*var or let? counter = 100*/
+      var counter = 100; 
       /*for (var or let? counter = 1; counter < 50; counter++){}*/
-
-      //expect(counter).toBe(50);
+for (var counter = 1; counter < 50; counter++) {};
+      expect(counter).toBe(50);
     });
 
     it('`let` restricts scope to inside the block also in `for` loops', () => {
       /*var or let? counter = 100*/
+      let counter = 100
       /*for (var or let? counter = 1; counter < 50; counter++){}*/
-
-      //expect(counter).toBe(100);
+for (let counter = 1; counter < 50; counter++) {}
+      expect(counter).toBe(100);
     });
   });
 
