@@ -46,39 +46,39 @@ describe('`const` is like `let` plus read-only. ', () => {
 
   describe('scalar values are read-only', () => {
     it('number are read-only', () => {
-      // const constNum = 0;
-      // constNum = 1;
+const constNum = 0;
+      //constNum = 1;
 
-      //expect(constNum).toBe(0);
+      expect(constNum).toBe(0);
     });
 
     it('string are read-only', () => {
-      // const constString = "I am a const";
+      const constString = "I am a const";
       // constString = "Cant change you?";
 
-      //expect(constString).toBe("I am a const");
+      expect(constString).toBe("I am a const");
     });
 
   });
 
   /*var, let or const? notChangeable = 23;*/
-
+const notChangeable = 23
   it('const scope leaks too', () => {
-    //expect(notChangeable).toBe(23);
+    expect(notChangeable).toBe(23);
   });
 
   describe('complex types are NOT fully read-only', () => {
 
     it('arrays is not fully read-only', () => {
-      const arr = [42, 23];
+      const arr = [0, 23];
 
-      //expect(arr[0]).toBe(0);
+      expect(arr[0]).toBe(0);
     });
 
     it('objects are not fully read-only', () => {
-      const obj = {x: 1};
+      const obj = {x: 2};
 
-      //expect(obj.x).toBe(2);
+      expect(obj.x).toBe(2);
     });
 
   });
@@ -90,11 +90,13 @@ describe('`string.includes()` finds string within another string. ', () => {
   describe('find a single character', function() {
     it('in a three char string', function() {
       /* const searchString = ???? */
-      //expect('xyz'.includes(searchString)).toBe(true);
+      const searchString = "xyz"
+      expect('xyz'.includes(searchString)).toBe(true);
     });
     it('reports false if character was not found', function() {
       /* const expected = ????*/;
-      //expect('xyz'.includes('abc')).toBe(expected);
+      
+      expect('xyz'.includes('abc')).toBe(expected);
     });
   });
 
